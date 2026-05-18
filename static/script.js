@@ -8,6 +8,7 @@ document.querySelectorAll(".card").forEach(card => {
         card.style.transform = "translateY(0px)";
     });
 });
+
 const fileInput = document.getElementById("fileInput");
 const fileName = document.getElementById("fileName");
 
@@ -18,22 +19,23 @@ if (fileInput && fileName) {
         }
     });
 }
+
 function showSection(section, element) {
 
     document.querySelectorAll(".menu li").forEach(item => {
         item.classList.remove("active");
     });
+
     element.classList.add("active");
 
     const upload = document.querySelector(".upload-card");
     const preview = document.querySelector(".preview-card");
     const result = document.querySelector(".result-card");
-    const exemples = document.querySelector(".examples-card");
     const historique = document.querySelector(".history-card");
     const stats = document.querySelector(".stats-card");
     const donut = document.querySelector(".donut-card");
 
-    const allCards = [upload, preview, result, exemples, historique, stats, donut];
+    const allCards = [upload, preview, result, historique, stats, donut];
 
     allCards.forEach(card => {
         if (card) card.style.display = "none";
@@ -44,50 +46,64 @@ function showSection(section, element) {
             if (card) card.style.display = "";
         });
 
-        upload.style.gridColumn = "1 / 2";
-        upload.style.gridRow = "1 / 2";
+        if (upload) {
+            upload.style.gridColumn = "1 / 2";
+            upload.style.gridRow = "1 / 2";
+        }
 
-        preview.style.gridColumn = "2 / 3";
-        preview.style.gridRow = "1 / 2";
+        if (preview) {
+            preview.style.gridColumn = "2 / 3";
+            preview.style.gridRow = "1 / 2";
+        }
 
-        result.style.gridColumn = "3 / 4";
-        result.style.gridRow = "1 / 2";
+        if (result) {
+            result.style.gridColumn = "3 / 4";
+            result.style.gridRow = "1 / 2";
+        }
     }
 
     else if (section === "detection") {
-        upload.style.display = "";
-        preview.style.display = "";
-        result.style.display = "";
+        if (upload) upload.style.display = "";
+        if (preview) preview.style.display = "";
+        if (result) result.style.display = "";
 
-        upload.style.gridColumn = "1 / 2";
-        upload.style.gridRow = "1 / 2";
+        if (upload) {
+            upload.style.gridColumn = "1 / 2";
+            upload.style.gridRow = "1 / 2";
+        }
 
-        preview.style.gridColumn = "2 / 3";
-        preview.style.gridRow = "1 / 2";
+        if (preview) {
+            preview.style.gridColumn = "2 / 3";
+            preview.style.gridRow = "1 / 2";
+        }
 
-        result.style.gridColumn = "3 / 4";
-        result.style.gridRow = "1 / 2";
+        if (result) {
+            result.style.gridColumn = "3 / 4";
+            result.style.gridRow = "1 / 2";
+        }
     }
 
     else if (section === "exemples") {
-        exemples.style.display = "";
+        allCards.forEach(card => {
+            if (card) card.style.display = "";
+        });
     }
 
     else if (section === "historique") {
-        historique.style.display = "";
-        stats.style.display = "";
-        donut.style.display = "";
+        if (historique) historique.style.display = "";
+        if (stats) stats.style.display = "";
+        if (donut) donut.style.display = "";
     }
 
     else if (section === "apropos") {
-        alert("NeuroVision est une application pédagogique de détection des tumeurs cérébrales à partir d’images IRM.");
+        alert("CerebraScan est une application pédagogique d’analyse et de classification des images IRM cérébrales.");
         allCards.forEach(card => {
             if (card) card.style.display = "";
         });
     }
 
     else if (section === "parametres") {
-        alert("Paramètres : interface fixe, thème rouge/noir, analyse IRM.");
+        alert("Paramètres : interface fixe, thème bleu-vert, analyse des images IRM.");
         allCards.forEach(card => {
             if (card) card.style.display = "";
         });
