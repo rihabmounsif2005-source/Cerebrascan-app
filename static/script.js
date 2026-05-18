@@ -31,11 +31,10 @@ function showSection(section, element) {
     const upload = document.querySelector(".upload-card");
     const preview = document.querySelector(".preview-card");
     const result = document.querySelector(".result-card");
-    const historique = document.querySelector(".history-card");
     const stats = document.querySelector(".stats-card");
     const donut = document.querySelector(".donut-card");
 
-    const allCards = [upload, preview, result, historique, stats, donut];
+    const allCards = [upload, preview, result, stats, donut];
 
     allCards.forEach(card => {
         if (card) card.style.display = "none";
@@ -90,7 +89,6 @@ function showSection(section, element) {
     }
 
     else if (section === "historique") {
-        if (historique) historique.style.display = "";
         if (stats) stats.style.display = "";
         if (donut) donut.style.display = "";
     }
