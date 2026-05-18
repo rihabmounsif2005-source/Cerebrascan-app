@@ -134,26 +134,7 @@ html, body{
     color:white;
 }
 
-/* BRAIN IMAGE */
-.brain-image-box{
-    position:absolute;
-    left:18px;
-    right:18px;
-    bottom:12px;
-    height:120px;
-    border-radius:15px;
-    overflow:hidden;
-    background:#021a20;
-    border:1px solid rgba(0,191,166,0.25);
-}
 
-.brain-image-box img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    background:#021a20;
-    filter:hue-rotate(130deg) saturate(1.3);
-}
 
 /* MAIN WHITE AREA */
 .main-content{
@@ -347,36 +328,6 @@ html, body{
 }
 
 
-/* HISTORY */
-.history-card{
-    height:125px;
-    grid-column:1 / 2;
-    grid-row:3 / 4;
-    margin-top:0;
-}
-
-.history-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-.history-table th,
-.history-table td{
-    font-size:9px;
-    padding:3px;
-    text-align:left;
-    border-bottom:1px solid #e5e7eb;
-}
-
-.danger-text{
-    color:var(--primary-dark);
-    font-weight:bold;
-}
-
-.safe-text{
-    color:var(--success);
-    font-weight:bold;
-}
 
 /* DONUT */
 .donut-card{
