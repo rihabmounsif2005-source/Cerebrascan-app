@@ -72,9 +72,6 @@
             </p>
         </div>
 
-        <div class="brain-image-box">
-            <img src="{{ url_for('static', filename='uploads/brain_red.png') }}" alt="Brain">
-        </div>
 
     </div>
 
@@ -174,31 +171,7 @@
                 </p>
             </div>
 
-            <!-- HISTORY -->
-            <div class="card history-card" id="historique">
-                <h3>Historique des prédictions</h3>
-
-                <table class="history-table">
-                    <tr>
-                        <th>ID</th>
-                        <th>Résultat</th>
-                        <th>Confiance</th>
-                    </tr>
-
-                    {% for item in history %}
-                    <tr>
-                        <td>{{ item.id }}</td>
-
-                        <td class="{% if item.result == 'PAS DE TUMEUR' %}safe-text{% else %}danger-text{% endif %}">
-                            {{ item.result }}
-                        </td>
-
-                        <td>{{ item.confidence }}%</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
-
+         
             <!-- DONUT -->
             <div class="card donut-card">
                 <h3>Répartition des types de tumeurs</h3>
